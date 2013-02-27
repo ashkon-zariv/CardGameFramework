@@ -130,7 +130,7 @@ public:
 
 Card generateRandomCard(bool fixedSequence = true);
 
-/*int main() //CardGameFramework Test
+int main() //CardGameFramework Test
 {
    srand(time(NULL));
    Card Card1('2', Card::spades), Card2('2', Card::clubs), 
@@ -200,135 +200,6 @@ Card generateRandomCard(bool fixedSequence = true);
 
    return(0);
 }*/
-
-/*int main()
-{
-   Card Card1('2', Card::clubs), Card2('2', Card::diamonds), 
-      Card3('2', Card::clubs), 
-      Card4('3', Card::clubs), 
-      Card5('A', Card::diamonds);
-
-   cout << "Should all == 0:" << endl;
-   cout << Card1.compareTo(Card3) << endl;
-   cout << Card3.compareTo(Card1) << endl;
-   cout << Card1.compareTo(Card1) << endl;
-
-   cout << "Should all < 0:" << endl;
-   cout << Card1.compareTo(Card2) << endl;
-   cout << Card1.compareTo(Card4) << endl;
-   cout << Card1.compareTo(Card5) << endl;
-
-   cout << "Should all > 0:" << endl;
-   cout << Card5.compareTo(Card1) << endl;
-   cout << Card5.compareTo(Card4) << endl;
-   cout << Card5.compareTo(Card2) << endl;
-}*/
-
-/*int main()
-{
-   int arraysize = 20;
-   Card array[20];
-   char ValOrder[13] = {'2', 'A', 'K', 'Q', 'J', 'T', 
-      '9', '8', '7', '6', '5', '4', '3'};
-   Card::Suit SuitOrder[4] = {Card::hearts, 
-      Card::diamonds, Card::clubs, Card::spades };
-   string out = "";
-   string sortout = "";
-   string rankout = "";
-
-   for (int k = 0; k < arraysize; k++)
-   {
-      array[k] = generateRandomCard(false);
-      out += array[k].toString();
-      if (k < arraysize - 1)
-         out += "/ ";
-   }
-   cout << out << endl << endl;
-
-   Card::arraySort(array, arraysize);
-   for (int j = 0; j < arraysize; j++)
-   {
-      sortout += array[j].toString();
-      if (j < arraysize - 1)
-         sortout += "/ ";
-   }
-   cout << sortout << endl << endl;
-
-
-   Card::setrankingOrder(ValOrder, SuitOrder, 13);
-   Card::arraySort(array, arraysize);
-   for (int i = 0; i < arraysize; i++)
-   {
-      rankout += array[i].toString();
-      if (i < arraysize - 1)
-         rankout += "/ ";
-   }
-   cout << rankout << endl << endl;
-}*/
-
-/*int main()
-{
-   Deck singleDeck, doubleDeck(2);
-
-   cout << "-----------single deck------------" << endl << 
-      singleDeck.toString() << endl << endl << 
-      "-----------double deck------------" << endl << 
-      doubleDeck.toString() << endl << endl;
-   singleDeck.sort();
-   doubleDeck.sort();
-   cout << "------single deck default sort-----" << endl << 
-      singleDeck.toString() << endl << endl << 
-      "------double deck default sort-----" 
-      << endl << doubleDeck.toString() << endl << endl;
-
-   int arraysize = 14;
-   char ValOrder[14] = {'X','A', 'K', 'Q', 'J', 'T', 
-      '9', '8', '7', '6', '5', '4', '3', '2'};
-   Card addCard1('X', Card::spades), 
-      addCard2('X', Card::diamonds);
-   singleDeck.addCard(addCard1);
-   doubleDeck.addCard(addCard1);
-   doubleDeck.addCard(addCard2);
-   Card::Suit SuitOrder[4] = {Card::diamonds, Card::spades, 
-      Card::clubs, Card::hearts};
-   Card::setrankingOrder(ValOrder, SuitOrder, arraysize);
-
-   singleDeck.sort();
-   doubleDeck.sort();
-
-   cout << "-----------single deck new sort ------------" << endl 
-      << singleDeck.toString() << endl << endl << 
-      "-----------double deck new sort ------------" 
-      << endl << doubleDeck.toString() << endl << endl;
-}*/
-
-int main()
-{
-   srand(time(NULL));
-   Card array[] = {NULL};
-   CardGameFramework Game1(1, 0, 0, array, 4, 13);
-
-   cout << "==================Game 1 before sort=====================" 
-      << endl << endl;
-
-   Game1.deal();
-   for (int i = 0; i < Game1.getNumPlayers() ; i++)
-   {
-      cout << "player #" << i << " --------------------------------------"
-         << endl << Game1.getHand(i).toString() << endl;
-   }
-
-   Game1.sortHands();
-
-   cout << "==================Game 1 after sort=====================" 
-      << endl << endl;
-
-   for (int i = 0; i < Game1.getNumPlayers() ; i++)
-   {
-      cout << "player #" << i << " --------------------------------------"
-         << endl << Game1.getHand(i).toString() << endl;
-   }
-}
 
 // Card methods
 Card::Card(char value, Suit suit)
