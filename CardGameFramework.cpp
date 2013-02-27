@@ -199,7 +199,7 @@ int main() //CardGameFramework Test
    }
 
    return(0);
-}*/
+}
 
 // Card methods
 Card::Card(char value, Suit suit)
